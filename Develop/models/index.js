@@ -1,21 +1,21 @@
 // import models
-const Product = require('./Product');
-const Category = require('./Category');
-const Tag = require('./Tag');
-const ProductTag = require('./ProductTag');
+const food = require('./food');
+const foodType = require('./foodType');
+const tag = require('./Tag');
+const foodTag = require('./ProductTag');
 
-// Products belongsTo Category
-Product.belongsTo(Category);
-// Categories have many Products
-Category.hasMany(Product);
-// Products belongToMany Tags (through ProductTag)
-Product.belongsToMany(Tag, {through: ProductTag});
-// Tags belongToMany Products (through ProductTag)
-Tag.belongsToMany(Product, {through: ProductTag});
+// The food you eat is a certain type of food
+food.belongsTo(foodType);
+// The type of food has a wide variety of food in it
+foodType.hasMany(food);
+// The food you ate belongToMany tags e.g. spicy, sweet (through ProductTag)
+food.belongsToMany(tag, {through: foodTag});
+// The tags belongToMany types of food (through ProductTag)
+tag.belongsToMany(food, {through: foodTag});
 
 module.exports = {
-  Product,
-  Category,
-  Tag,
-  ProductTag,
+  food,
+  foodType,
+  tag,
+  foodTag,
 };

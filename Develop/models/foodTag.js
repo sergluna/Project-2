@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 const food = require('./food');
-const Tag = require('./Tag');
+const tag = require('./tag');
 
 class foodTag extends Model {}
 
@@ -25,7 +25,7 @@ foodTag.init(
     tag_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: Tag,
+        model: tag,
         key: 'id'
       }
     }
@@ -35,8 +35,8 @@ foodTag.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'product_tag',
+    modelName: 'foodTag',
   }
 );
 
-module.exports = ProductTag;
+module.exports = foodTag;
