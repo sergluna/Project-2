@@ -20,7 +20,11 @@ food.init(
     food_name: {
       type: DataTypes.STRING,
       allowNull: false
-    }, 
+    },
+    food_descr: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
     price: {
       type: DataTypes.DECIMAL,
       allowNull: false,
