@@ -2,7 +2,7 @@
 const { Model, DataTypes } = require('sequelize');
 // import our database connection from config.js
 const sequelize = require('../config/connection');
-const type = require('./type');
+const type = require('./foodType');
 
 // Initialize Product model (table) by extending off Sequelize's Model class
 class food extends Model {}

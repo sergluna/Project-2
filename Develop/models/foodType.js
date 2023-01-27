@@ -27,4 +27,4 @@ foodType.init(
   }
 );
 
-module.exports = type;
+module.exports = foodType;

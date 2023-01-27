@@ -1,0 +1,17 @@
+[
+    {
+        "food_name": "pizza",
+        "food_descr": "tasty",
+        "price": 5
+    },
+    {
+        "food_name": "burger",
+        "food_descr": "tasty",
+        "price": 6
+    },
+    {
+        "food_name": "sandwich",
+        "food_descr": "nasty",
+        "price": 4
+    }
+]

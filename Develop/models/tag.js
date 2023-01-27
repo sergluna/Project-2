@@ -2,9 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Tag extends Model {}
+class tag extends Model {}
 
-Tag.init(
+tag.init(
   {
     // define columns
     id: {
@@ -26,4 +26,4 @@ Tag.init(
   }
 );
 
-module.exports = Tag;
+module.exports = tag;
