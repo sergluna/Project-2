@@ -9,6 +9,7 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
 //gets the info from one food by id
 router.get('/:id', async (req, res) => {
     try {
@@ -29,7 +30,7 @@ router.post('/', async (req, res) => {
     try {
         const newFood = await food.create({
             ...req.body,
-            user_idd: req.session.user_id,
+            user_id: req.session.user_id,
         });
         res.status(200).json(newFood);
     } catch (err) {
@@ -37,6 +38,7 @@ router.post('/', async (req, res) => {
     }
 });
 
+//may need to add withAuth tag to this
 //updates the food
 router.put('/:food_name', (req, res) => {
     food.update(
