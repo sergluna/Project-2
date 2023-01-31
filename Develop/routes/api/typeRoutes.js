@@ -1,11 +1,10 @@
-const router = require('express');
-const { type } = require('os');
-const food = require('../../models/type');
+const router = require('express').Router();
+const { Food, foodType } = require('../../models');
 
 //get route for food types
 router.get('/', async (req, res) => {
     try {
-        const typeData = await type.findAll();
+        const typeData = await foodType.findAll();
         res.status(200).json(typeData);
     } catch (err) {
         res.status(500).json(err);
@@ -15,7 +14,7 @@ router.get('/', async (req, res) => {
 // get route for one food type by id
 router.get('/:id', async (req, res) => {
     try {
-        const typeData = await type.findbyPk(req.params.id);
+        const typeData = await foodType.findbyPk(req.params.id);
         if (!typeData) {
             res.status(400).json({ message: 'No food type with that id.' });
             return;
@@ -30,7 +29,7 @@ router.get('/:id', async (req, res) => {
 //may need to add withAuth tag to this
 router.post('/', async (req, res) => {
     try {
-        const newType = await type.create({
+        const newType = await foodType.create({
             ...req.body,
             user_id: req.session.user_id,
         });
@@ -44,7 +43,7 @@ router.post('/', async (req, res) => {
 //may need to add withAuth tag to this
 router.put('/:type_name', async (req, res) => {
     try {
-        const updatedType = await food.update(
+        const updatedType = await foodType.update(
             {
                 type_name: req.body.type_name,
         },
