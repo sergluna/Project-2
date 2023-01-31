@@ -6,17 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "seed": "node seed/seeds.js"
+    "seed": "node seeds/seed.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "path": "^0.12.7",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-handlebars": "^6.0.7",
     "express-session": "^1.17.3",
+    "mysql2": "^3.0.1",
+    "nodemon": "^2.0.20",
+    "passport": "^0.6.0",
     "passport-local": "^1.0.0",
-    "path": "^0.12.7",
     "sequelize": "^6.28.0"
   }
 }
