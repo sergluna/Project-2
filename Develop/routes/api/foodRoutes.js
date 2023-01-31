@@ -58,3 +58,5 @@ router.put('/:food_name', (req, res) => {
     })
     .catch((err) => res.json(err));
 });
+
+module.exports = router;
