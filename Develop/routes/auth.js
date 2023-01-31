@@ -1,9 +1,8 @@
-const express = require('express');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 var crypto = require('crypto');
 const db = require('../seeds/userData.json');
-const { Router } = require('express');
+const Router = require('express').Router();
 
 passport.use(new LocalStrategy(function verify(username, password, cb) {
     db.get('SELECT * FROM users WHERE username = ?', [ username ], function(err, row) {
@@ -26,4 +25,4 @@ Router.post('/login/password', passport.authenticate('local', {
     failureRedirect: '/login'
 }));
 
-module.exports = withAuth;
+//module.exports = withAuth;

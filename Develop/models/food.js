@@ -5,10 +5,10 @@ const sequelize = require('../config/connection');
 const type = require('./foodType');
 
 // Initialize Product model (table) by extending off Sequelize's Model class
-class food extends Model {}
+class Food extends Model {}
 
 // set up fields and rules for food model
-food.init(
+Food.init(
   {
     // define columns
     id: {
@@ -49,4 +49,4 @@ food.init(
   }
 );
 
-module.exports = food;
+module.exports = Food;

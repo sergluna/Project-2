@@ -1,5 +1,5 @@
-const router = require('express');
-const food = require('../../models/food');
+const router = require('express').Router();
+const Food = require('../../models/food');
 // gets the info from all foods
 router.get('/', async (req, res) => {
     try {

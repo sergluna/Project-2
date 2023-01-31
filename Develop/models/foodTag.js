@@ -1,8 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
-const food = require('./food');
-const tag = require('./tag');
+const Food = require('./food');
+const Tag = require('./tag');
 
 class foodTag extends Model {}
 
@@ -18,14 +18,14 @@ foodTag.init(
     food_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: food,
+        model: Food,
         key: 'id'
       }
     },
     tag_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: tag,
+        model: Tag,
         key: 'id'
       }
     }
