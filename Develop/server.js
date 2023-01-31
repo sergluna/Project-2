@@ -15,9 +15,13 @@ const hbs = exphbs.create({ routes });
 
 const sess = {
   secret: 'Super secret secret',
-  cookie: {},
+  cookie: {
+    maxAge: 300000,
+    secure: false,
+    sameSite: 'strict',
+  },
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   store: new SequelizeStore({
     db: sequelize
   })
