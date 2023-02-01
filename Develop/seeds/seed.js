@@ -9,6 +9,11 @@ const foodData = require('./foodData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
+  await Food.bulkCreate(foodData, {
+    individualHooks: true,
+    returning: true,
+  });
+
   // I added food datem I could be wrong here
   await User.bulkCreate(userData, {
     individualHooks: true,
