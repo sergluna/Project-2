@@ -1,11 +1,12 @@
 const router = require('express').Router();
-const food = require('../../models/food');
-const { foodTag, update } = require('../../models/foodTag');
+const Food = require('../../models/food');
+const Tag = require('../../models/tag');
 
 router.get('/', async (req, res) => {
     try { 
-        const tagData = await foodTag.findAll();
-        res.status(200).json(tagData);
+        const tagData = await Tag.findAll();
+        const tags = tagData.map(tag => tag.get({plain: true}));
+        res.status(200).json(tags);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -13,7 +14,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try {
-        const tagData = await foodTag.findByPk(req.params.id);
+        const tagData = await Tag.findByPk(req.params.id);
         if (!tagData) {
             res.status(400).json({ message: 'No tag found with that id. '});
             return;
@@ -26,7 +27,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const newTag = await foodTag.create({
+        const newTag = await Tag.create({
             ...req.body,
             user_id: req.session.user_id,
         });
@@ -38,7 +39,7 @@ router.post('/', async (req, res) => {
 
 
 router.put('/:tag_name', (req, res) => {
-    foodTag.update(
+    Tag.update(
         {
             tag_name: req.body.tag_name,
         },
