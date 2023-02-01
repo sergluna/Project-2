@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
-const withAuth = require('../routes/auth');
+//const withAuth = require('../routes/auth');
 
 class User extends Model {}
 
@@ -29,7 +29,7 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                min: 12,
+                min: 10,
             },
         },
     },

@@ -3,7 +3,7 @@ const Food = require('../../models/food');
 // gets the info from all foods
 router.get('/', async (req, res) => {
     try {
-        const foodData = await food.findAll();
+        const foodData = await Food.findAll();
         res.status(200).json(foodData);
     } catch (err) {
         res.status(500).json(err);
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 //gets the info from one food by id
 router.get('/:id', async (req, res) => {
     try {
-        const foodData = await food.findbyPk(req.params.id);
+        const foodData = await Food.findbyPk(req.params.id);
         if (!foodData) {
             res.status(400).json({ message: 'No food found with that id.'});
             return;
@@ -28,7 +28,7 @@ router.get('/:id', async (req, res) => {
 //may need to add withAuth to this to verify login to post
 router.post('/', async (req, res) => {
     try {
-        const newFood = await food.create({
+        const newFood = await Food.create({
             ...req.body,
             user_id: req.session.user_id,
         });
@@ -41,10 +41,11 @@ router.post('/', async (req, res) => {
 //may need to add withAuth tag to this
 //updates the food
 router.put('/:food_name', (req, res) => {
-    food.update(
+    Food.update(
         {
             food_name: req.body.food_name,
             food_descr: req.body.food_descr,
+            photo_url: req.body.photo_url,
             price: req.body.price,
         },
         {
