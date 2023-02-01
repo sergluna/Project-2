@@ -25,6 +25,10 @@ Food.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    photo_url: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     price: {
       type: DataTypes.DECIMAL,
       allowNull: false,
