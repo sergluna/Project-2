@@ -45,6 +45,7 @@ router.put('/:food_name', (req, res) => {
         {
             food_name: req.body.food_name,
             food_descr: req.body.food_descr,
+            photo_url: req.body.photo_url,
             price: req.body.price,
         },
         {
