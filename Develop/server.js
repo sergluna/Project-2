@@ -3,7 +3,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const passport = require('passport-local');
 const session = require('express-session');
-const routes = require('./routes')
+const routes = require('./routes');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -11,7 +11,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const hbs = exphbs.create({  });
+const hbs = exphbs.create({ routes });
 
 const sess = {
   secret: 'Super secret secret',

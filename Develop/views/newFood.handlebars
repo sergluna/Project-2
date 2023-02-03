@@ -14,8 +14,8 @@
         Dish Name:
       </label>
       <br />
-      <textarea id='dish_name' name='dish_name' rows='2' cols='30'>
-        {{dish_name}}
+      <textarea id='dish_name' name='food_name' rows='2' cols='30'>
+
       </textarea>
       <br />
       <label for='description'>
@@ -23,22 +23,33 @@
       </label>
       <br />
       <textarea id='description' name='description' rows='5' cols='30'>
-        {{description}}
+
       </textarea>
       <br />
-      <label for='guest_name'>
+      {{!-- <label for='guest_name'>
         Guest Name:
       </label>
       <br />
       <textarea id='guest_name' name='guest_name' rows='2' cols='30'>
-        {{guest_name}}
-      </textarea>
+
+      </textarea> --}}
       <br />
       <br />
-      <input type='checkbox' id='has_nuts' name='has_nuts' value='true' />
-      <label for='has_nuts'>
-        Check box if this dish contains nuts
+      <label for='price'>
+        Price:
       </label>
+      <br />
+      <input type="number" id="price" name="price" rows="2" cols="30">
+
+      </input>
+      <br />
+      <label for="tag-name">
+        Tags:
+      </label>
+      <br />
+      <textarea id="tag_name" name="tag_name" rows="5" cols="30">
+
+      </textarea>
       <br />
       <button type='submit' value='Submit'>
         Submit
