@@ -7,6 +7,7 @@ async function newFormHandler(event) {
     const food_descr = document.querySelector('#description').value;
     const price = document.querySelector('#price').value;
     const photo_url = document.querySelector('#url').value;
+    const tag_name = document.querySelector('tag_name').value.split(' ');
 
     // Send fetch request to add a new dish
     // I AM NOT SURE IF THIS IS THE RIGHT ROUTE FOR POSTING NEW FOOD
@@ -16,7 +17,8 @@ async function newFormHandler(event) {
             food_name,
             food_descr,
             price,
-            photo_url
+            photo_url,
+            tag_name
         }),
         headers: {
             'Content-Type': 'application/json',

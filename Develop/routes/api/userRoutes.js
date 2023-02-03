@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models/User');
+const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
     try {
@@ -10,10 +10,13 @@ router.post('/', async (req, res) => {
         });
 
         req.session.save(() => {
-            req.session.user_id = userData.isSoftDeleted;
+            req.session.user_id = userData.id;
             req.session.logged_in = true;
+
+            res.status(200).json(userData);
         });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
@@ -41,8 +44,11 @@ router.post('/login', async (req, res) => {
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
+
+            res.status(204).end();
         });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
