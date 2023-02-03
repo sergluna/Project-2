@@ -47,9 +47,9 @@ THEN I am able to enter the information of the food I want to post
 
 If you have any questions please feel free to reach out to us by visiting our github pages:
 
-https://github.com/rdalby2002
-https://github.com/sergluna
-https://github.com/CASTICRI003
+https://github.com/rdalby2002  
+https://github.com/sergluna  
+https://github.com/CASTICRI003  
 
 
 
