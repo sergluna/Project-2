@@ -4,11 +4,16 @@ Collaborating within a group to create an interactive Full-Stack Application. Do
 
 ## Description
 ### User Story
+
+```md
 AS A foodie who loves tasty meals
 I WANT a editorial site
 SO THAT I can read about the meals other foodies have shared on website
+```
 
 ### Acceptance Criteria
+
+```md
 WHEN I visit the site for the first time
 THEN I am able to review other recipes and meals that other users have written about
 WHEN I click press the login button
@@ -17,6 +22,7 @@ WHEN I finish logging in
 THEN I am presented with a button to create a new post
 WHEN I press the post button 
 THEN I am able to enter the information of the food I want to post
+```
 
 ---
 
