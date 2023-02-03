@@ -1,5 +1,42 @@
 [
     {
-        "tag_name": "spicy"
+        "food_name": "Hot Pot",
+        "tag_name": "Spicy"
+    },
+    {
+        "food_name": "AWFUL Sandwich",
+        "tag_name": "Nasty"
+    },
+    {
+        "food_name": "Ol' Fashioned American Burger",
+        "tag_name": "Classic"
+    },
+    {
+        "food_name": "Simple Syrup",
+        "tag_name": "Simple"
+    },
+    {
+        "food_name": "Hot Pot",
+        "tag_name": "Complex"
+    },
+    {
+        "food_name": "Margherita Pizza",
+        "tag_name": "Vegetarian"
+    },
+    {
+        "food_name": "Hot Pot",
+        "tag_name": "Expensive"
+    },
+    {
+        "food_name": "Margherita Pizza",
+        "tag_name": "It's Pizza, so it's Good."
+    },
+    {
+        "food_name": "Ol' Fashioned American Burger",
+        "tag_name": "Freedom"
+    },
+    {
+        "food_name": "Simple Syrup",
+        "tag_name": "Mixer"
     }
 ]
