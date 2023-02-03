@@ -30,7 +30,7 @@ Food.init(
       allowNull: false,
     },
     photo_url: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     price: {
