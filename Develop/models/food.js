@@ -21,10 +21,10 @@ Food.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    food_url: {
-      type: DataTypes.STRING,
-      allowNull:true
-    },
+    // food_url: {
+    //   type: DataTypes.STRING,
+    //   allowNull:true
+    // },
     food_descr: {
       type: DataTypes.TEXT,
       allowNull: false,

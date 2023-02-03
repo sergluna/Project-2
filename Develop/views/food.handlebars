@@ -1,23 +1,30 @@
-<div class="food-card">
-    <div class="food-name-header">
-        {{food_name}}
+{{#each foods as |food| }}
+<div class="card food-card" style="max-width: 768px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{food.photo_url}}" class="img-fluid rounded-start" alt="...">
     </div>
-    <div class="card-body">
-        <p>
-            Food Type:
-            {{type_name}}
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{food.food_name}}</h5>
+        <p class="card-text">
+            Food type:
+            {{food.food_type}}
         </p>
-        <p>
-            Description:
-            {{food_descr}}
+        <p class="card-text">
+            Food description:
+            {{food.food_descr}}
         </p>
-        <p>
+        <p class="card-text">
             Price:
-            {{price}}
+            {{food.price}}
         </p>
-        <p>
-            Tags:
-            {{tag_name}}
+        <p class="card-text">
+            tags:
+            {{tags.tag_name}}
         </p>
+      </div>
     </div>
+  </div>
 </div>
+{{/each}}
